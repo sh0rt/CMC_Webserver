@@ -7,6 +7,7 @@
 <title>Login Action</title>
 </head>
 <body>
-<%response.sendRedirect("login.jsp?Error=1"); %>
+<%if(request.getParameter("username") == "" && request.getParameter("password") == "")
+	response.sendRedirect("login.jsp?Error=4");%>
 </body>
 </html>
