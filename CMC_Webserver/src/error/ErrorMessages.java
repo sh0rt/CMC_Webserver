@@ -18,7 +18,7 @@ public class ErrorMessages {
 	
 	public static String loginError(int Error){
 		if(Error == 1)
-			return "Incorrect Username or Password, try again.";
+			return "Incorrect Username or Password, please try again.";
 		else if(Error == 2)
 			return "Please enter in a username";
 		else if(Error == 3)
