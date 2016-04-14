@@ -22,10 +22,12 @@
 	if(user == null)
 		response.sendRedirect("login.jsp?Error=1");
 	else if(user.getType() == 'a'){
-	  session.setAttribute("admin",user);
+	 // session.setAttribute("admin",user);
 	  session.setAttribute("adminhome",new AdminInterface(user));
 	  response.sendRedirect("adminhome.jsp");
 	}else if(user.getType() == 'u'){
+		session.setAttribute("userhome", new StudentHome(user));
+		response.sendRedirect("UserHome.jsp");
 		//go to user web page
 	}else
 		out.print("ERROR");
