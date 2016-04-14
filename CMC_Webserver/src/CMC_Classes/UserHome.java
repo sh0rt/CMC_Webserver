@@ -45,4 +45,12 @@ public class UserHome {
 		DataBaseHome db = new DataBaseHome();
 		return db.login(username, password);
 	}
+	public boolean register(String first, String last, String user, String pass){
+		try{
+			database.addUser(first,last,user,pass,'u');
+		}catch(IllegalArgumentException ex){
+			return false;
+		}
+		return true;
+	}
 }

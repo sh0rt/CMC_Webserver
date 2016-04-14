@@ -14,8 +14,9 @@
 	  response.sendRedirect("login.jsp?Error=2");
     else if(request.getParameter("password") == "")
 	  response.sendRedirect("login.jsp?Error=3");
-
+    else{
 	UserHome userhome = new UserHome();
+	session.setAttribute("userhome", userhome);
 	User user = userhome.login(request.getParameter("username"), request.getParameter("password"));
 	
 	if(user == null)
@@ -27,6 +28,7 @@
 	}else if(user.getType() == 'u'){
 		//go to user web page
 	}else
-		out.print("ERROR");%>
+		out.print("ERROR");
+		}%>
 </body>
 </html>

@@ -25,6 +25,8 @@ public class ErrorMessages {
 			return "Please enter in a password";
 		else if(Error == 4)
 			return "Please enter in a username and password";
+		else if(Error == 6)
+			return "Welcome to CMC, please login to use the system.";
 		return "";
 	}
 
