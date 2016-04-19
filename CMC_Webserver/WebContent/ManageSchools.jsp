@@ -7,6 +7,7 @@
 <title>Manage Schools</title>
 </head>
 <body>
+<center>
 <table border ="3">
 <tbody>
 
@@ -62,5 +63,6 @@ for(int i=0; i< schools.size(); i++){ %>
 <%} %>
 </tbody>
 </table>
+</center>
 </body>
 </html>

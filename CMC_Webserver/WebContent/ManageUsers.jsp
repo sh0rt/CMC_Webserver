@@ -7,6 +7,7 @@
 <title>Manage Users</title>
 </head>
 <body>
+<center>
 <table border ="3">
 <tbody>
 
@@ -30,7 +31,7 @@ for(int i=0; i< users.size(); i++){ %>
 <tr>
 <td>
 <form action="DeactivateUser.jsp" method="post">
-<input type="hidden" name="school" value =<%=i%> >
+<input type="hidden" name="duser" value =<%=i%> >
 <input type="submit" value="Deactivate"> 
 </form>
 </td>
@@ -43,7 +44,7 @@ for(int i=0; i< users.size(); i++){ %>
 <td><%=users.get(i).getStatus()%></td>
 <td>
 <form action="EditUser.jsp" method="post">
-<input type="hidden" name="school" value = <%=i%>>
+<input type="hidden" name="euser" value=<%=i%>>
 <input type="submit" value="Edit"> 
 </form>
 </td>
@@ -53,5 +54,6 @@ for(int i=0; i< users.size(); i++){ %>
 
 </tbody>
 </table>
+</center>
 </body>
 </html>
