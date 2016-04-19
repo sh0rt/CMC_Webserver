@@ -31,7 +31,7 @@ public User login(String username, String password){
 
 public User addUser(String firstname, String lastname, String username, String password, char type){
 	if(type != 'a' && type != 'u')
-		throw new IllegalArgumentException("type is not a or s");
+		throw new IllegalArgumentException("type is not a or u");
 	else if(firstname.equals(""))
 		throw new IllegalArgumentException("empty argument");
 	else if(lastname.equals(""))
@@ -58,8 +58,8 @@ public User addUser(String firstname, String lastname, String username, String p
     }
     
     public User editUser(String firstname, String lastname, String username, String password, char type,char status){
-    	if(type != 'a' && type != 's')
-    		throw new IllegalArgumentException("type is not a or s");
+    	if(type != 'a' && type != 'u')
+    		throw new IllegalArgumentException("type is not a or u");
     	else if(firstname.equals(""))
     		throw new IllegalArgumentException("empty argument 1");
     	else if(lastname.equals(""))
@@ -68,7 +68,7 @@ public User addUser(String firstname, String lastname, String username, String p
     		throw new IllegalArgumentException("empty argument 3");
     	else if(password.equals(""))
     		throw new IllegalArgumentException("empty argument 4");
-    	else if(status != 'a' && type != 'd')
+    	else if(status != 'Y' && status != 'N' )
     		throw new IllegalArgumentException("empty argument 5");
     	
       if(dummydatabase.user_editUser(username, firstname,lastname,password, type,status) == 0)

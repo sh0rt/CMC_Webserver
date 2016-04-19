@@ -7,10 +7,11 @@
 <title>Deactivate User</title>
 </head>
 <body>
-<%=request.getParameter("duser") %>
+<%=Integer.parseInt(request.getParameter("duser")) %>
 <%
-out.print(((AdminInterface)session.getAttribute("AdminInterface")).
-		deactivateUser(Integer.parseInt(request.getParameter("duser"))));
-  response.sendRedirect("ManageUsers.jsp");%>
+ out.print(((AdminInterface)session.getAttribute("adminInterface")).
+ 		deactivateUser(Integer.parseInt(request.getParameter("duser"))));
+   response.sendRedirect("ManageUsers.jsp");
+%> 
 </body>
 </html>

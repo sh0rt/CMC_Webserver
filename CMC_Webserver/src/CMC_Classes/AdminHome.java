@@ -44,7 +44,7 @@ public class AdminHome {
 	 * @return users
 	 */
 	public ArrayList<User> getUsers() {
-		return users;
+		return database.getUsers();
 	}
 
 	/**
@@ -163,6 +163,7 @@ public class AdminHome {
     		throw new IllegalArgumentException("empty argument 4");
 		User temp = new User(firstName, lastName, username, password, type, 'a');
 		users.add(temp);
+		database.addUser(firstName, lastName, username, password, type);
 		return temp;
 	}
 
@@ -174,7 +175,7 @@ public class AdminHome {
 	 * @return user
 	 */
 	public User editUser(String firstName, String lastName, String username, String password, char type, char status) {
-    	if(type != 'a' && type != 'u' && type != 's')
+    	if(type != 'a' && type != 'u')
     		throw new IllegalArgumentException("type is not a or s");
     	else if(firstName.equals(""))
     		throw new IllegalArgumentException("empty argument 1");
@@ -184,7 +185,7 @@ public class AdminHome {
     		throw new IllegalArgumentException("empty argument 3");
     	else if(password.equals(""))
     		throw new IllegalArgumentException("empty argument 4");
-    	else if(status != 'a' && status != 'd')
+    	else if(status != 'Y' && status != 'N')
     		throw new IllegalArgumentException("empty argument 5");
 		int i = 0;
 		while (i < users.size() && users.get(i).getUsername().equals(username)) {
@@ -199,6 +200,7 @@ public class AdminHome {
 			users.get(i).setPassword(password);
 			users.get(i).setStatus(status);
 		}
+		database.editUser(firstName, lastName, username, password, type, status);
 		return users.get(i);
 	}
 
