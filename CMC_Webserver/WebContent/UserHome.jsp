@@ -7,6 +7,6 @@
 <title>User Home</title>
 </head>
 <body>
-user home
+User Home
 </body>
 </html>
