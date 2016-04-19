@@ -4,9 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Administrator Home</title>
+<title>Administrator Menu</title>
 </head>
 <body>
-You logged on!!!
+<a href="ManageSchools.jsp">Manage Universities</a>
+<br>
+<a href="ManageUsers.jsp">Manage Users</a>
 </body>
 </html>

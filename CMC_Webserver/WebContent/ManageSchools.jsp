@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1" import="java.util.*, CMC_Classes.School, CMC_Classes.AdminHome"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -33,34 +33,33 @@
 <td></td>
 </tr>
 
-<% for(int i=0; i< 10; i++){ %>
+<% ArrayList<School> schools = ((AdminHome)session.getAttribute("adminhome")).getSchools();
+for(int i=0; i< schools.size(); i++){ %>
 <tr>
-<td>School number <%=i%></td>
-<td>State</td>
-<td>Location</td>
-<td>Control</td>
-<td># of Students</td>
-<td>% Females</td>
-<td>SAT Verbal</td>
-<td>SAT Math</td>
-<td>Expenses</td>
-<td>% with<br>Financial<br>Aid</td>
-<td># of<br>Applicants</td>
-<td>% Admitted</td>
-<td>% Enrolled</td>
-<td>Academics<br>Scale (1-5)</td>
-<td>Social<br>Scale<br>(1-5)</td>
-<td>Quality<br>of Life<br>Scale<br>(1-5)</td>
+<td><%=schools.get(i).getSchool()%></td>
+<td><%=schools.get(i).getState()%></td>
+<td><%=schools.get(i).getLocation()%></td>
+<td><%=schools.get(i).getControl()%></td>
+<td><%=schools.get(i).getNumStudents()%></td>
+<td><%=schools.get(i).getPercentFemale()%></td>
+<td><%=schools.get(i).getSatVerbal()%></td>
+<td><%=schools.get(i).getSatMath()%></td>
+<td><%=schools.get(i).getExpenses()%></td>
+<td><%=schools.get(i).getPercentFinAid()%></td>
+<td><%=schools.get(i).getNumApplicants()%></td>
+<td><%=schools.get(i).getPercentAdmitted()%></td>
+<td><%=schools.get(i).getPercentEnrolled()%></td>
+<td><%=schools.get(i).getAcademicScale()%></td>
+<td><%=schools.get(i).getSocialscale()%></td>
+<td><%=schools.get(i).getQualOfLife()%></td>
 <td>
 <form action="ViewSchool.jsp" method="post">
-<input type="hidden" name="school" value = "SCHOOL Name">
+<input type="hidden" name="schoolID" value = <%=i%>>
 <input type="submit" value="Edit"> 
 </form>
 </td>
 </tr>
 <%} %>
-
-
 </tbody>
 </table>
 </body>

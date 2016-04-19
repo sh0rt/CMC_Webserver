@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1" import="java.util.*, CMC_Classes.User, CMC_Classes.AdminHome"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Manage Users</title>
 </head>
 <body>
 <table border ="3">
@@ -25,23 +25,25 @@
 <th></th>
 </tr>
 
-<% for(int i=0; i< 10; i++){ %>
+<% ArrayList<User> users = ((AdminHome)session.getAttribute("adminhome")).getUsers();
+for(int i=0; i< users.size(); i++){ %>
 <tr>
 <td>
 <form action="DeactivateUser.jsp" method="post">
-<input type="hidden" name="school" value = "USER Name">
+<input type="hidden" name="school" value =<%=i%> >
 <input type="submit" value="Deactivate"> 
 </form>
 </td>
-<td></td>
-<td>name</td>
-<td>name</td>
-<td>user</td>
-<td>pass</td>
-<td>status</td>
+<td width="20px"></td>
+<td><%=users.get(i).getFirstName()%></td>
+<td><%=users.get(i).getLastName()%></td>
+<td><%=users.get(i).getUsername()%></td>
+<td><%=users.get(i).getPassword()%></td>
+<td><%=users.get(i).getType()%></td>
+<td><%=users.get(i).getStatus()%></td>
 <td>
 <form action="EditUser.jsp" method="post">
-<input type="hidden" name="school" value = "User Name">
+<input type="hidden" name="school" value = <%=i%>>
 <input type="submit" value="Edit"> 
 </form>
 </td>
