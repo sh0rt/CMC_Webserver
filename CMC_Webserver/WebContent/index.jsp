@@ -4,11 +4,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>CMC</title>
 </head>
 <body>
-<%response.sendRedirect(
-		"login.jsp"
-		); %>
+<center>
+<h1>Welcome to CMC, Lets find you a handy dandy college</h1>
+<form action="login.jsp">
+<input type="submit" value ="Continue to Website">
+</form>
+</center>
 </body>
 </html>
