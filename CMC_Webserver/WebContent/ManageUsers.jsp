@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" import="java.util.*, CMC_Classes.User, CMC_Classes.AdminHome"%>
+    <%if(session.getAttribute("user")==null || ((User)session.getAttribute("user")).getType()!='a')
+		response.sendRedirect("login.jsp?Error=5");
+	  else{%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -49,7 +52,7 @@ for(int i=0; i< users.size(); i++){ %>
 </form>
 </td>
 </tr>
-<%} %>
+<%}} %>
 
 
 </tbody>

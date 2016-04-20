@@ -7,6 +7,10 @@
 <title>Edit User</title>
 </head>
 <body>
+<%if(request.getParameter("Error") != null){
+	if(request.getParameter("Error") == "1")
+		out.print("<p color='red'>Please enter in proper values</p>");
+	}%>
 <%User user = ((AdminHome)session.getAttribute("adminhome")).getUser(Integer.parseInt(request.getParameter("euser"))); %>
 <center>
 <h1>Edit User</h1>
@@ -19,23 +23,23 @@
 </tr>
 <tr>
 <td width="160px">Last Name</td>
-<td><input type="text" name= "first" value="<%=user.getLastName()%>"></td>
+<td><input type="text" name= "last" value="<%=user.getLastName()%>"></td>
 </tr>
 <tr>
 <td width="160px">Username</td>
-<td><input type="text" name= "first" value="<%=user.getUsername()%>" readonly></td>
+<td><input type="text" name= "username" value="<%=user.getUsername()%>" readonly></td>
 </tr>
 <tr>
 <td width="160px">Password</td>
-<td><input type="text" name= "first" value="<%=user.getPassword()%>"></td>
+<td><input type="text" name= "password" value="<%=user.getPassword()%>"></td>
 </tr>
 <tr>
 <td width="160px">Type</td>
-<td><input type="text" name= "first" value="<%=user.getType()%>"></td>
+<td><input type="text" name= "type" value="<%=user.getType()%>"></td>
 </tr>
 <tr>
 <td width="160px">Status</td>
-<td><input type="text" name= "first" value="<%=user.getStatus()%>"></td>
+<td><input type="text" name= "status" value="<%=user.getStatus()%>"></td>
 </tr>
 </tbody>
 </table>

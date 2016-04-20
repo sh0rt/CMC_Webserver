@@ -7,6 +7,12 @@
 <title>CMC</title>
 </head>
 <body>
+
+<%session.setAttribute("adminHome", null);
+  session.setAttribute("adminInterface", null);
+  session.setAttribute("studenthome", null);
+  session.setAttribute("user", null);
+ %>
 <center>
 <h1>Welcome to CMC, Lets find you a handy dandy college</h1>
 <form action="login.jsp">
