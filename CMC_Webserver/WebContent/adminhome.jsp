@@ -4,13 +4,17 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Administrator Menu</title>
+<title>Administrator Home</title>
 </head>
 <body>
+<<<<<<< HEAD
 <%if(session.getAttribute("user")==null || ((User)session.getAttribute("user")).getType()!='a')
 	response.sendRedirect("login.jsp?Error=5");%>
 <a href="ManageSchools.jsp">Manage Universities</a>
 <br>
 <a href="ManageUsers.jsp">Manage Users</a>
+=======
+You logged on!!!
+>>>>>>> branch 'master' of https://github.com/sh0rt/CMC_Webserver.git
 </body>
 </html>

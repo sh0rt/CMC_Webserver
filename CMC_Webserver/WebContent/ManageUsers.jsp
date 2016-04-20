@@ -1,16 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<<<<<<< HEAD
     pageEncoding="ISO-8859-1" import="java.util.*, CMC_Classes.User, CMC_Classes.AdminHome"%>
     <%if(session.getAttribute("user")==null || ((User)session.getAttribute("user")).getType()!='a')
 		response.sendRedirect("login.jsp?Error=5");
 	  else{%>
+=======
+    pageEncoding="ISO-8859-1"%>
+>>>>>>> branch 'master' of https://github.com/sh0rt/CMC_Webserver.git
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Manage Users</title>
+<title>Insert title here</title>
 </head>
 <body>
-<center>
 <table border ="3">
 <tbody>
 
@@ -29,25 +32,23 @@
 <th></th>
 </tr>
 
-<% ArrayList<User> users = ((AdminHome)session.getAttribute("adminhome")).getUsers();
-for(int i=0; i< users.size(); i++){ %>
+<% for(int i=0; i< 10; i++){ %>
 <tr>
 <td>
 <form action="DeactivateUser.jsp" method="post">
-<input type="hidden" name="duser" value =<%=i%> >
+<input type="hidden" name="school" value = "USER Name">
 <input type="submit" value="Deactivate"> 
 </form>
 </td>
-<td width="20px"></td>
-<td><%=users.get(i).getFirstName()%></td>
-<td><%=users.get(i).getLastName()%></td>
-<td><%=users.get(i).getUsername()%></td>
-<td><%=users.get(i).getPassword()%></td>
-<td><%=users.get(i).getType()%></td>
-<td><%=users.get(i).getStatus()%></td>
+<td></td>
+<td>name</td>
+<td>name</td>
+<td>user</td>
+<td>pass</td>
+<td>status</td>
 <td>
 <form action="EditUser.jsp" method="post">
-<input type="hidden" name="euser" value=<%=i%>>
+<input type="hidden" name="school" value = "User Name">
 <input type="submit" value="Edit"> 
 </form>
 </td>
@@ -57,6 +58,5 @@ for(int i=0; i< users.size(); i++){ %>
 
 </tbody>
 </table>
-</center>
 </body>
 </html>

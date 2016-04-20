@@ -1,8 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<<<<<<< HEAD
     pageEncoding="ISO-8859-1" import="java.util.*, CMC_Classes.School, CMC_Classes.*"%>
         <%if(session.getAttribute("user")==null || ((User)session.getAttribute("user")).getType()!='a')
 		response.sendRedirect("login.jsp?Error=5");
 	  else{%>
+=======
+    pageEncoding="ISO-8859-1"%>
+>>>>>>> branch 'master' of https://github.com/sh0rt/CMC_Webserver.git
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -10,7 +14,6 @@
 <title>Manage Schools</title>
 </head>
 <body>
-<center>
 <table border ="3">
 <tbody>
 
@@ -37,35 +40,39 @@
 <td></td>
 </tr>
 
-<% ArrayList<School> schools = ((AdminHome)session.getAttribute("adminhome")).getSchools();
-for(int i=0; i< schools.size(); i++){ %>
+<% for(int i=0; i< 10; i++){ %>
 <tr>
-<td><%=schools.get(i).getSchool()%></td>
-<td><%=schools.get(i).getState()%></td>
-<td><%=schools.get(i).getLocation()%></td>
-<td><%=schools.get(i).getControl()%></td>
-<td><%=schools.get(i).getNumStudents()%></td>
-<td><%=schools.get(i).getPercentFemale()%></td>
-<td><%=schools.get(i).getSatVerbal()%></td>
-<td><%=schools.get(i).getSatMath()%></td>
-<td><%=schools.get(i).getExpenses()%></td>
-<td><%=schools.get(i).getPercentFinAid()%></td>
-<td><%=schools.get(i).getNumApplicants()%></td>
-<td><%=schools.get(i).getPercentAdmitted()%></td>
-<td><%=schools.get(i).getPercentEnrolled()%></td>
-<td><%=schools.get(i).getAcademicScale()%></td>
-<td><%=schools.get(i).getSocialscale()%></td>
-<td><%=schools.get(i).getQualOfLife()%></td>
+<td>School number <%=i%></td>
+<td>State</td>
+<td>Location</td>
+<td>Control</td>
+<td># of Students</td>
+<td>% Females</td>
+<td>SAT Verbal</td>
+<td>SAT Math</td>
+<td>Expenses</td>
+<td>% with<br>Financial<br>Aid</td>
+<td># of<br>Applicants</td>
+<td>% Admitted</td>
+<td>% Enrolled</td>
+<td>Academics<br>Scale (1-5)</td>
+<td>Social<br>Scale<br>(1-5)</td>
+<td>Quality<br>of Life<br>Scale<br>(1-5)</td>
 <td>
 <form action="ViewSchool.jsp" method="post">
-<input type="hidden" name="schoolID" value = <%=i%>>
+<input type="hidden" name="school" value = "SCHOOL Name">
 <input type="submit" value="Edit"> 
 </form>
 </td>
 </tr>
+<<<<<<< HEAD
 <%} }%>
+=======
+<%} %>
+
+
+>>>>>>> branch 'master' of https://github.com/sh0rt/CMC_Webserver.git
 </tbody>
 </table>
-</center>
 </body>
 </html>

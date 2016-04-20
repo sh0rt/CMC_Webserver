@@ -125,12 +125,10 @@ public class AdminInterface {
 	 * @return removed user
 	 */
 	public String deactivateUser(int id) {
-		if(id < 0)
+		if(id <= 0)
 			throw new IllegalArgumentException();
 		User user = admin.getUser(id);
-		if(user == null)
-			throw new IllegalArgumentException();
-		admin.editUser(user.getFirstName(), user.getLastName(), user.getUsername(), user.getPassword(), user.getType(),'N');
+		admin.editUser(user.getFirstName(), user.getLastName(), user.getUsername(), user.getPassword(), user.getType(),'d');
 		return "Succesfully deactivated " + user.getFirstName() + ".";
 	}
 

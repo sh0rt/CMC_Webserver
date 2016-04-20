@@ -23,8 +23,7 @@
 		response.sendRedirect("login.jsp?Error=1");
 	else if(user.getType() == 'a'){
 	 // session.setAttribute("admin",user);
-	  session.setAttribute("adminInterface",new AdminInterface(user));
-	  session.setAttribute("adminhome",new AdminHome(user));
+	  session.setAttribute("adminhome",new AdminInterface(user));
 	  response.sendRedirect("adminhome.jsp");
 	}else if(user.getType() == 'u'){
 		session.setAttribute("studenthome", new StudentHome(user));
