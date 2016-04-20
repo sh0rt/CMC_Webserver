@@ -8,7 +8,7 @@
 </head>
 <body>
 	<center>
-		<h1>Welcome to CMC, Lets find you a handy college</h1>
+		<h1>Welcome to CMC, Lets find you a handy dandy college</h1>
 		<form action="login.jsp">
 			<input type="submit" value="Continue to Website">
 		</form>
